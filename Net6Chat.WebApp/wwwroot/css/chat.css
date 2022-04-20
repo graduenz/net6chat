@@ -1,0 +1,52 @@
+﻿#chatContainer {
+    background-color: #EEF2F4;
+}
+
+    #chatContainer * {
+        font-family: 'Inter', sans-serif;
+    }
+
+    #chatContainer h2 {
+        font-weight: 600;
+        margin-bottom: 32px;
+    }
+
+    #chatContainer #messages {
+        font-size: 13px;
+        margin-bottom: 32px;
+    }
+
+        #chatContainer #messages .time {
+            font-size: 10px;
+            color: #999;
+            float: right;
+        }
+
+    #chatContainer input[type=text] {
+        font-size: 13px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 8px 12px;
+        width: 100%;
+    }
+
+        #chatContainer input[type=text]:focus, #chatContainer input[type=text]:active {
+            outline: none;
+        }
+
+    #chatContainer input[type=button] {
+        background-color: white;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    #chatContainer .message {
+        background-color: white;
+        padding: 8px 12px;
+        border-radius: 5px;
+        margin: 4px 0;
+    }

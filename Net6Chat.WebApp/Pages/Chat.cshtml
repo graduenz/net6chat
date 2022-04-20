@@ -1,0 +1,24 @@
+﻿@page
+@model ChatModel
+<link rel="stylesheet" href="~/css/chat.css" asp-append-version="true" />
+<div id="chatContainer" class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <h2>Chat Room @ViewData["Room"]</h2>
+    </div>
+    <div class="row">
+        <div id="messages" class="col-12">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10">
+            <input type="text" id="messageInput" placeholder="Type a message" />
+        </div>
+        <div class="col-2">
+            <input type="button" id="sendButton" value="Send" />
+        </div>
+    </div>
+    <div class="row">&nbsp;</div>
+</div>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

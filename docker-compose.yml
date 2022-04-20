@@ -9,3 +9,9 @@ services:
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
+
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"

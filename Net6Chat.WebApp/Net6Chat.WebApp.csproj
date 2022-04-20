@@ -20,4 +20,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Net6Chat.IoC\Net6Chat.IoC.csproj" />
+    <ProjectReference Include="..\Net6Chat.Migrations\Net6Chat.Migrations.csproj" />
+  </ItemGroup>
+
 </Project>

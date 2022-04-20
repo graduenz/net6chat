@@ -1,21 +1,26 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Net6Chat.WebApp.Data;
+using Net6Chat.Domain;
+using Net6Chat.IoC;
+using Net6Chat.WebApp.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("SqlContext");
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));
-
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options => {
+    options.Conventions.AuthorizePage("/Chat");
+});
+
+builder.Services.AddSignalR(options => {
+    options.EnableDetailedErrors = true;
+});
+
+DependencyInjectionBootstrapper.RegisterApplicationDependencies(builder.Services, builder.Configuration);
 
 var app = builder.Build();
 
@@ -40,5 +45,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+app.MapHub<ChatHub>("/chatHub");
 
 app.Run();
