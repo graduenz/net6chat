@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.WebApp", "Net6Chat.WebApp\Net6Chat.WebApp.csproj", "{D2D6AE63-ED83-47C0-9529-AB2BED7D039F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6Chat.WebApp", "Net6Chat.WebApp\Net6Chat.WebApp.csproj", "{D2D6AE63-ED83-47C0-9529-AB2BED7D039F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Domain", "Net6Chat.Domain\Net6Chat.Domain.csproj", "{86AC06C4-06C9-48F7-8EC8-B92A8EDA9DA4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6Chat.Domain", "Net6Chat.Domain\Net6Chat.Domain.csproj", "{86AC06C4-06C9-48F7-8EC8-B92A8EDA9DA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.IoC", "Net6Chat.IoC\Net6Chat.IoC.csproj", "{75002876-F58C-452A-95A1-E542F5906316}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6Chat.IoC", "Net6Chat.IoC\Net6Chat.IoC.csproj", "{75002876-F58C-452A-95A1-E542F5906316}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Migrations", "Net6Chat.Migrations\Net6Chat.Migrations.csproj", "{F388A19C-5F0B-4600-9110-1F959305D76B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6Chat.Migrations", "Net6Chat.Migrations\Net6Chat.Migrations.csproj", "{F388A19C-5F0B-4600-9110-1F959305D76B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Consumers.Persistence", "Net6Chat.Consumers.Persistence\Net6Chat.Consumers.Persistence.csproj", "{2E6A7DBC-1E7F-4304-91DA-EB2EA8CF118D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6Chat.Consumers.Persistence", "Net6Chat.Consumers.Persistence\Net6Chat.Consumers.Persistence.csproj", "{2E6A7DBC-1E7F-4304-91DA-EB2EA8CF118D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Consumers.StockBot", "Net6Chat.Consumers.StockBot\Net6Chat.Consumers.StockBot.csproj", "{95B2A1F9-A9F1-421D-BC03-561C779817E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6Chat.Consumers.StockBot", "Net6Chat.Consumers.StockBot\Net6Chat.Consumers.StockBot.csproj", "{95B2A1F9-A9F1-421D-BC03-561C779817E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Consumers.StockBot.Tests", "Net6Chat.Consumers.StockBot.Tests\Net6Chat.Consumers.StockBot.Tests.csproj", "{E61B95D6-3DFD-4BD0-AB29-68522E314FEB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{95B2A1F9-A9F1-421D-BC03-561C779817E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{95B2A1F9-A9F1-421D-BC03-561C779817E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{95B2A1F9-A9F1-421D-BC03-561C779817E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E61B95D6-3DFD-4BD0-AB29-68522E314FEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E61B95D6-3DFD-4BD0-AB29-68522E314FEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E61B95D6-3DFD-4BD0-AB29-68522E314FEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E61B95D6-3DFD-4BD0-AB29-68522E314FEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
