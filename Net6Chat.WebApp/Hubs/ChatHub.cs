@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using DotNetCore.CAP;
+using Microsoft.AspNetCore.SignalR;
 using Net6Chat.Domain.DTO;
 using Net6Chat.Domain.Models;
 using Net6Chat.Domain.Services;
@@ -44,6 +45,12 @@ namespace Net6Chat.WebApp.Hubs
 
         public async Task SendMessage(string message)
         {
+            if (message.StartsWith("/stock=")) {
+                var stock = message.Replace("/stock=", string.Empty);
+                await _chatService.GetStockQuotationAsync(GetRoom(), Context.ConnectionId, stock);
+                return;
+            }
+
             var entity = new Message() {
                 Room = GetRoom(),
                 Text = message,
@@ -54,6 +61,11 @@ namespace Net6Chat.WebApp.Hubs
             await Clients.Group(entity.Room).SendAsync("ReceiveMessage", entity.UserName, message, entity.Created.ToString("G"));
 
             await _chatService.PersistMessageAsync(entity);
+        }
+
+        public async Task StockBotResponse(string callerConnectionId, string message)
+        {
+            await Clients.Client(callerConnectionId).SendAsync("ReceiveMessage", "Stock Bot", message, DateTime.Now.ToString("G"));
         }
 
         private string GetRoom()

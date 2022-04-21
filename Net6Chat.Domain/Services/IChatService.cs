@@ -8,5 +8,6 @@ namespace Net6Chat.Domain.Services
         void RemoveConnectedClient(string room, string connectionId);
         Task PersistMessageAsync(Message message);
         Task<IList<Message>> FetchMessagesAsync(string room, int limit = 50);
+        Task GetStockQuotationAsync(string room, string connectionId, string stock);
     }
 }

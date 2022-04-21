@@ -61,5 +61,19 @@ namespace Net6Chat.Domain.Services.Impl
                 .Take(limit)
                 .ToListAsync();
         }
+
+        public async Task GetStockQuotationAsync(string room, string connectionId, string stock)
+        {
+            using (var transaction = _dbContext.Database.BeginTransaction(_capBus, autoCommit: true))
+            {
+                var data = new GetStockDto() {
+                    Room = room,
+                    ConnectionId = connectionId,
+                    Stock = stock,
+                };
+
+                await _capBus.PublishAsync("bots.stock.get", data);
+            }
+        }
     }
 }

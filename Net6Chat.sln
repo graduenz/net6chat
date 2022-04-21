@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Migrations", "Net6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Consumers.Persistence", "Net6Chat.Consumers.Persistence\Net6Chat.Consumers.Persistence.csproj", "{2E6A7DBC-1E7F-4304-91DA-EB2EA8CF118D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Net6Chat.Consumers.StockBot", "Net6Chat.Consumers.StockBot\Net6Chat.Consumers.StockBot.csproj", "{95B2A1F9-A9F1-421D-BC03-561C779817E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2E6A7DBC-1E7F-4304-91DA-EB2EA8CF118D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2E6A7DBC-1E7F-4304-91DA-EB2EA8CF118D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2E6A7DBC-1E7F-4304-91DA-EB2EA8CF118D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95B2A1F9-A9F1-421D-BC03-561C779817E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95B2A1F9-A9F1-421D-BC03-561C779817E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95B2A1F9-A9F1-421D-BC03-561C779817E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95B2A1F9-A9F1-421D-BC03-561C779817E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
