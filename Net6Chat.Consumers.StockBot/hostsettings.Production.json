@@ -1,0 +1,15 @@
+﻿{
+  "ConnectionStrings": {
+    "SqlContext": "Data Source=sqlserver;Initial Catalog=Net6Chat;User Id=sa;Password=Password1",
+    "RabbitMQ": "amqp://rabbitmq"
+  },
+  "ExternalServices": {
+    "ChatHubUrl": "http://webapp/chatHub?room={0}"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

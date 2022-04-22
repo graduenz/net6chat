@@ -3,15 +3,70 @@ version: "3.8"
 services:
 
   sqlserver:
+    container_name: sqlserver
     image: mcr.microsoft.com/mssql/server:latest
     environment:
       SA_PASSWORD: Password1
       ACCEPT_EULA: "Y"
     ports:
       - "1433:1433"
+    networks:
+      - net6chat
 
   rabbitmq:
+    container_name: rabbitmq
     image: rabbitmq:3.9-management
     ports:
       - "5672:5672"
       - "15672:15672"
+    networks:
+      - net6chat
+
+  webapp:
+    container_name: webapp
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    build:
+      context: .
+      dockerfile: ./Net6Chat.WebApp/Dockerfile
+    expose:
+      - 80
+      - 443
+      - 8081
+    ports:
+      - "8081:80"
+    networks:
+      - net6chat
+    depends_on:
+      - sqlserver
+      - rabbitmq
+
+  consumers_persistence:
+    container_name: consumers_persistence
+    environment:
+        - DOTNET_ENVIRONMENT=Production
+    build:
+      context: .
+      dockerfile: ./Net6Chat.Consumers.Persistence/Dockerfile
+    networks:
+      - net6chat
+    depends_on:
+      - sqlserver
+      - rabbitmq
+
+  consumers_stockbot:
+    container_name: consumers_stockbot
+    environment:
+        - DOTNET_ENVIRONMENT=Production
+    build:
+      context: .
+      dockerfile: ./Net6Chat.Consumers.StockBot/Dockerfile
+    networks:
+      - net6chat
+    depends_on:
+      - sqlserver
+      - rabbitmq
+
+networks:    
+  net6chat:
+    driver: bridge

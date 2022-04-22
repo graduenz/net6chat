@@ -7,7 +7,12 @@ using Net6Chat.Consumers.StockBot.Services.Impl;
 using Net6Chat.IoC;
 
 await Host.CreateDefaultBuilder(args)
-    .ConfigureAppConfiguration(cfg => cfg.AddJsonFile("hostsettings.json"))
+    .ConfigureAppConfiguration((ctx, cfg) => {
+        if (ctx.HostingEnvironment.IsProduction())
+            cfg.AddJsonFile("hostsettings.Production.json");
+        else
+            cfg.AddJsonFile("hostsettings.json");
+    })
     .ConfigureServices((ctx, services) =>
     {
         services.AddTransient<StockBotSub>();

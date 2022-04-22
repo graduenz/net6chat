@@ -9,9 +9,13 @@
 
   <ItemGroup>
     <None Remove="hostsettings.json" />
+    <None Remove="hostsettings.Production.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="hostsettings.Production.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="hostsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

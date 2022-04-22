@@ -38,7 +38,15 @@ namespace Net6Chat.Consumers.StockBot
                 .WithAutomaticReconnect()
                 .Build();
 
-            await connection.StartAsync();
+            try
+            {
+                await connection.StartAsync();
+            }
+            catch
+            {
+                _logger.LogError($"Failure trying to connect to chat hub at {hubUrl}");
+                throw;
+            }
 
             var botResponse = stockQuotation.Success
                 ? $"{data.Stock} quote is ${stockQuotation.Data?.Close:C2} per share"

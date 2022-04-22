@@ -1,0 +1,12 @@
+﻿{
+  "ConnectionStrings": {
+    "SqlContext": "Data Source=sqlserver;Initial Catalog=Net6Chat;User Id=sa;Password=Password1",
+    "RabbitMQ": "amqp://rabbitmq"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}
